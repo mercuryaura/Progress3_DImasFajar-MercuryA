@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="onNewPackage()">Add Package</button>
+        <hr>
+    </div>
+    <hr>
+</div>
+<div class="row">
+    <div class="col-xs-15">
+        <app-package-item>
+                *ngFor="let packageEL of packages; let i = index"
+                [package]="packageEL"
+                [index]="i">
+        </app-package-item>
+    </div>
+</div>

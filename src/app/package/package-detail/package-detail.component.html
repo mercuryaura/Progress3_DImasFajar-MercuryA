@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img [src]="package.imagePath" 
+    alt="{{package.name}}" 
+    class="img-responsive"
+    style="max-height:300px">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{package.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group"
+    appDropdown>
+      <button type="button" class="btn btn-primary dropdown-toggle">
+        Manage Package <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li> <a (click) ="onAddBookingList()" style="cursor:pointer;"> Booking</a></li>
+        <li> <a style="cursor:pointer;"(click)="onEditPackage()"> Edit Package</a></li>
+        <li> <a style="cursor:pointer"(click)="onDeletePackage()"> Delete Package </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{package.description}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+
+    <ul class="list-group">
+      <li
+      class="list-group-item"
+      *ngFor="let ingredient of package.ingredients">
+    {{ingredient.name}}-{{ingredient.amount }}
+    </li>
+    </ul>
+  </div>
+</div>
+
